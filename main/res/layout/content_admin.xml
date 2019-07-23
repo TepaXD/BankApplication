@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".AdminActivity"
+    tools:showIn="@layout/app_bar_admin">
+
+    <TextView
+        android:id="@+id/list_title"
+        android:layout_width="146dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="132dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="Bank accounts"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user_spinner" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="151dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="133dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="128dp"
+        android:layout_marginBottom="11dp"
+        android:gravity="center"
+        android:text="Transactions"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/transaction_list"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/account_list" />
+
+    <ListView
+        android:id="@+id/account_list"
+        android:layout_width="383dp"
+        android:layout_height="95dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/list_title" />
+
+    <ListView
+        android:id="@+id/transaction_list"
+        android:layout_width="381dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="308dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.65"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <Spinner
+        android:id="@+id/user_spinner"
+        android:layout_width="285dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="63dp"
+        android:layout_marginTop="31dp"
+        android:layout_marginEnd="63dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/nameview"
+        android:layout_width="258dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="31dp"
+        android:text=" Name:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/transaction_list" />
+
+    <TextView
+        android:id="@+id/addressview"
+        android:layout_width="258dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="19dp"
+        android:text=" Address:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/phonenumview" />
+
+    <TextView
+        android:id="@+id/phonenumview"
+        android:layout_width="258dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="10dp"
+        android:text=" Phonenumber:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameview" />
+
+    <TextView
+        android:id="@+id/bankview"
+        android:layout_width="258dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginBottom="35dp"
+        android:text=" Bank: "
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addressview" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

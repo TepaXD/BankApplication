@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.main.PlaceholderFragment">
+
+    <Spinner
+        android:id="@+id/account_spinner"
+        android:layout_width="302dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="94dp"
+        android:layout_marginTop="155dp"
+        android:layout_marginEnd="94dp"
+        android:layout_marginBottom="544dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.6" />
+
+    <Button
+        android:id="@+id/add_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginBottom="32dp"
+        android:text="Update account"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="32dp"
+        android:text="Delete account"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/account_name_view"
+        android:layout_width="187dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="28dp"
+        android:hint="Account name will be here"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/account_spinner" />
+
+    <TextView
+        android:id="@+id/account_money_view"
+        android:layout_width="187dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="20dp"
+        android:hint="Account balance will be here"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/account_name_view" />
+
+    <TextView
+        android:id="@+id/account_withdrawlimit_view"
+        android:layout_width="187dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="168dp"
+        android:hint="Account withdrawlimit will be here"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/account_money_view" />
+
+    <TextView
+        android:id="@+id/card_number_view"
+        android:layout_width="187dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginEnd="168dp"
+        android:layout_marginBottom="11dp"
+        android:hint="Card number will be here"
+        app:layout_constraintBottom_toTopOf="@+id/card_paylimit_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/card_creditlimit_view"
+        android:layout_width="187dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="12dp"
+        android:hint="Card creditlimit will be here"
+        app:layout_constraintBottom_toTopOf="@+id/add_button"
+        app:layout_constraintEnd_toStartOf="@+id/card_creditlimit_edit"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/card_paylimit_view"
+        android:layout_width="187dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="11dp"
+        android:hint="Card paylimit will be here"
+        app:layout_constraintBottom_toTopOf="@+id/card_creditlimit_view"
+        app:layout_constraintEnd_toStartOf="@+id/card_paylimit_edit"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/card_creditlimit_edit"
+        android:layout_width="133dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:ems="10"
+        android:enabled="false"
+        android:hint="Enter new card creditlimit"
+        android:inputType="numberDecimal"
+        android:textSize="11dp"
+        app:layout_constraintBottom_toTopOf="@+id/button_delete"
+        app:layout_constraintStart_toEndOf="@+id/card_creditlimit_view" />
+
+    <EditText
+        android:id="@+id/card_paylimit_edit"
+        android:layout_width="133dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="4dp"
+        android:ems="10"
+        android:enabled="false"
+        android:hint="Enter new card paylimit"
+        android:inputType="numberDecimal"
+        android:textSize="11dp"
+        app:layout_constraintBottom_toTopOf="@+id/card_creditlimit_edit"
+        app:layout_constraintStart_toEndOf="@+id/card_paylimit_view" />
+
+    <EditText
+        android:id="@+id/paylimit_change_edit"
+        android:layout_width="139dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="56dp"
+        android:ems="10"
+        android:hint="Enter new withdrawlimit"
+        android:inputType="numberDecimal"
+        android:textSize="11dp"
+        app:layout_constraintBottom_toTopOf="@+id/edit_card_radioGroup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/account_name_view" />
+
+    <EditText
+        android:id="@+id/name_edit"
+        android:layout_width="139dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="8dp"
+        android:ems="10"
+        android:hint="Enter new name"
+        android:inputType="text"
+        android:textSize="11dp"
+        app:layout_constraintBottom_toTopOf="@+id/money_add_edit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/account_name_view" />
+
+    <EditText
+        android:id="@+id/money_add_edit"
+        android:layout_width="139dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="8dp"
+        android:ems="10"
+        android:hint="Add money"
+        android:inputType="numberDecimal"
+        android:textSize="11dp"
+        app:layout_constraintBottom_toTopOf="@+id/paylimit_change_edit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/account_name_view" />
+
+    <Switch
+        android:id="@+id/add_card_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="170dp"
+        android:enabled="false"
+        android:text="Add card to account     "
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/account_withdrawlimit_view" />
+
+    <RadioGroup
+        android:id="@+id/edit_card_radioGroup"
+        android:layout_width="317dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="41dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/add_card_switch">
+
+        <RadioButton
+            android:id="@+id/radioButton_debit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:clickable="false"
+            android:text="Debit card" />
+
+        <RadioButton
+            android:id="@+id/radioButton_credit"
+            android:layout_width="296dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:clickable="false"
+            android:text="Credit card" />
+
+    </RadioGroup>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

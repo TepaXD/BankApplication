@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".PaymentsActivity"
+    tools:showIn="@layout/app_bar_payments">
+
+    <Spinner
+        android:id="@+id/account_spinner_payments"
+        android:layout_width="356dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="69dp"
+        android:layout_marginEnd="29dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/money_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="98dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="100dp"
+        android:ems="10"
+        android:hint="Enter amount"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/card_creditlimit" />
+
+    <Button
+        android:id="@+id/payment_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="34dp"
+        android:layout_marginBottom="136dp"
+        android:text="Pay!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/withdraw_button"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/account_withdrawlimit"
+        android:layout_width="202dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="40dp"
+        android:hint="Withdraw limit:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/account_spinner_payments" />
+
+    <TextView
+        android:id="@+id/card_type"
+        android:layout_width="202dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="22dp"
+        android:hint="Card type:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/account_withdrawlimit" />
+
+    <TextView
+        android:id="@+id/card_paylimit"
+        android:layout_width="202dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="22dp"
+        android:hint="Card paylimit:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/card_type" />
+
+    <TextView
+        android:id="@+id/card_creditlimit"
+        android:layout_width="201dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="22dp"
+        android:hint="Card creditlimit:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/card_paylimit" />
+
+    <Spinner
+        android:id="@+id/spinner_transfer"
+        android:layout_width="354dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="46dp"
+        android:layout_marginEnd="29dp"
+        android:layout_marginBottom="58dp"
+        app:layout_constraintBottom_toTopOf="@+id/payment_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/money_amount" />
+
+    <Button
+        android:id="@+id/withdraw_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="34dp"
+        android:layout_marginBottom="136dp"
+        android:text="Withdraw!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button3"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/payment_button" />
+
+    <Button
+        android:id="@+id/transfer_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="34dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="136dp"
+        android:text="Transfer!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintStart_toEndOf="@+id/withdraw_button" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

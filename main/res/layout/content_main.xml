@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity"
+    tools:showIn="@layout/app_bar_main">
+
+    <TextView
+        android:id="@+id/greeting_text"
+        android:layout_width="321dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="620dp"
+        android:paddingStart="5dp"
+        android:textSize="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.09" />
+
+    <TextView
+        android:id="@+id/list_title"
+        android:layout_width="191dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="112dp"
+        android:layout_marginBottom="4dp"
+        android:gravity="center"
+        android:text="Bank accounts"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/account_list"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:layout_width="194dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="Account transactions"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/account_list" />
+
+    <ListView
+        android:id="@+id/account_list"
+        android:layout_width="365dp"
+        android:layout_height="202dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="27dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/greeting_text" />
+
+    <ListView
+        android:id="@+id/transaction_list"
+        android:layout_width="286dp"
+        android:layout_height="92dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="27dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/account_list"
+        app:layout_constraintVertical_bias="0.045" />
+
+    <Button
+        android:id="@+id/file_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="161dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="161dp"
+        android:layout_marginBottom="16dp"
+        android:text="Save to file"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/transaction_list" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

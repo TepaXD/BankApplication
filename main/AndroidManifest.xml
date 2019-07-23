@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.bankapplication">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="ExtraText">
+        <activity
+            android:name=".AdminAdd"
+            android:label="@string/title_activity_admin_add"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".AdminDelete"
+            android:label="@string/title_activity_admin_delete"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".AdminActivity"
+            android:label="@string/title_activity_admin"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ManageUser"
+            android:label="@string/title_activity_manage_user"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/title_activity_login">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ManageAccountActivity"
+            android:label="@string/title_activity_manage_account"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".PaymentsActivity"
+            android:label="@string/title_activity_payments"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar" />
+    </application>
+
+</manifest>
