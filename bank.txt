@@ -1,0 +1,90 @@
+CREATE TABLE bank(
+   bankid INT PRIMARY KEY NOT NULL,
+   bankname VARCHAR(30) NOT NULL
+  );
+
+CREATE TABLE bank_user (
+   username VARCHAR(10) PRIMARY KEY NOT NULL,
+   password VARCHAR(50) NOT NULL,
+   name VARCHAR(50),
+   address VARCHAR(50),
+   phonenumber VARCHAR(50),
+   bankid INT DEFAULT 1,
+   CONSTRAINT bank
+   FOREIGN KEY (bankid) REFERENCES bank(bankid)
+   ON DELETE CASCADE
+   );
+
+CREATE TABLE bank_admin (
+   username VARCHAR(10) PRIMARY KEY NOT NULL,
+   password VARCHAR(10) NOT NULL,
+   bankid INT NOT NULL,
+   CONSTRAINT bank
+   FOREIGN KEY (bankid) REFERENCES bank(bankid)
+   ON DELETE CASCADE
+   );
+
+CREATE TABLE current_account (
+   accountnumber INTEGER PRIMARY KEY AUTOINCREMENT,
+   username VARCHAR(50) NOT NULL,
+   money REAL DEFAULT 0,
+   accountname VARCHAR(50) DEFAULT "Current account",
+   paylimit REAL DEFAULT 0,
+   CONSTRAINT userid
+   FOREIGN KEY (username) REFERENCES bank_user (username)
+   ON DELETE CASCADE,
+   CHECK (money >= 0)
+   );
+
+CREATE TABLE savings_account (
+   accountnumber INTEGER PRIMARY KEY AUTOINCREMENT,
+   username VARCHAR(50) NOT NULL,
+   money REAL DEFAULT 0,
+   accountname VARCHAR(50) DEFAULT "Savings account",
+   CONSTRAINT userid
+   FOREIGN KEY (username) REFERENCES bank_user (username)
+   ON DELETE CASCADE,
+   CHECK (money >= 0)
+   );
+
+
+
+CREATE TABLE credit (
+   cardnumber_credit INT PRIMARY KEY NOT NULL,
+   accountnumber INT NOT NULL,
+   creditlimit REAL DEFAULT 0,
+   paylimit REAL DEFAULT 0,
+   CONSTRAINT accountid
+   FOREIGN KEY (accountnumber) REFERENCES current_account (accountnumber)
+   ON DELETE CASCADE,
+   CHECK (creditlimit >= 0 and paylimit >= 0)
+   );
+
+CREATE TABLE debit (
+   cardnumber_debit INT PRIMARY KEY NOT NULL,
+   accountnumber INT NOT NULL,
+   paylimit REAL DEFAULT 0,
+   CONSTRAINT accountid
+   FOREIGN KEY (accountnumber) REFERENCES current_account (accountnumber)
+   ON DELETE CASCADE,
+   CHECK (paylimit >= 0)
+   );
+
+CREATE TABLE transactions (
+   accountnumber_current INT DEFAULT 0,
+   accountnumber_savings INT DEFAULT 0,
+   money varchar(50),
+   CONSTRAINT accountid
+   FOREIGN KEY (accountnumber_current) REFERENCES current_account (accountnumber)
+   ON DELETE CASCADE,
+   FOREIGN KEY (accountnumber_savings) REFERENCES savings_account (accountnumber)
+   ON DELETE CASCADE
+);
+
+PRAGMA FOREIGN_KEYS = ON;
+
+INSERT INTO bank_admin (username,password,bankid)
+   VALUES('admin','admin',1);
+
+INSERT INTO bank (bankid, bankname)
+   VALUES(1,'Bank of LUT');

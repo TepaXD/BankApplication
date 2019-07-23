@@ -1,0 +1,25 @@
+SELECT * from bank_user;
+
+SELECT * FROM current_account LEFT OUTER JOIN credit ON credit.accountnumber = current_account.accountnumber LEFT OUTER JOIN debit ON debit.accountnumber = current_account.accountnumber WHERE username =?;
+
+SELECT * FROM savings_account WHERE username = ?;
+
+SELECT bankname, bank.bankid FROM bank INNER JOIN bank_user ON bank_user.bankid = bank.bankid WHERE username =?;
+
+SELECT * FROM transactions WHERE  accountnumber_credit =?;
+
+SELECT * FROM transactions WHERE  accountnumber_debit =?;
+
+UPDATE current_account SET money = ?, accountname = ?, withdrawlimit_account =?  WHERE accountnumber = ?;
+
+UPDATE credit SET creditlimit_card = ?, paylimit_card = ? WHERE accountnumber = ?;
+
+UPDATE debit  SET paylimit_card =? WHERE accountnumber = ?;
+
+UPDATE savings_account  SET money = ?, accountname  = ? WHERE accountnumber = ?;
+
+DELETE FROM current_account WHERE accountnumber = ?;
+
+DELETE FROM savings_account  WHERE accountnumber = ?;
+
+DELETE FROM bank_user WHERE username = ?;
